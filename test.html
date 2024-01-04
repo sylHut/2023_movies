@@ -29,18 +29,9 @@
     </style>
 </head>
 <body>
-
-    <fieldset>
-        <h3>2023 Movies Dashboard</h3>  
-        <select id=bg>
-          <option value="0">Worldwide</option>
-          <option value="1">Domestic</option>
-        </select>
-      </fieldset>
-
     <div class="container">
         <div class="row">
-            <div class="col-md-12 jumbotron text-center" style="font-family: Verdana;">
+            <div class="col-md-12 jumbotron text-center" style="font-family: Verdana;text-align: center;">
                 <h1>2023 Worldwide Box Office Dashboard</h1>
             </div>
         </div>
@@ -52,20 +43,62 @@
         <div class="row">
             <div class="col-md-6">
                 <span class="a"> <!-- treemp box -->
+                    <fieldset style="border: none; font-family: Verdana;">
+                        <h3>Treemap View</h3>
+                        <select id="tm" onchange="updateTreemap()">
+                          <option value="0">Worldwide</option>
+                          <option value="1">Domestic</option>
+                        </select>
+                    </fieldset>
                     <div class="treemap-container"> <!-- Container for the treemap -->
-                        <div id="myTreemap"></div> <!-- Treemap goes here -->
+                        <div id="myTreemap"></div>
+                        <div id="myTreemap_us" style="display: none;"></div>
                     </div>
                 </span>
+                <script>
+                    function updateTreemap() {
+                        var selectedValue = document.getElementById('tm').value;
+                        if (selectedValue === '0') {
+                            document.getElementById('myTreemap').style.display = 'block';
+                            document.getElementById('myTreemap_us').style.display = 'none';
+                        } else if (selectedValue === '1') {
+                            document.getElementById('myTreemap').style.display = 'none';
+                            document.getElementById('myTreemap_us').style.display = 'block';
+                        }
+                    }
+                </script>
                 <span class="a"> <!-- bubble box -->
+                    <fieldset style="border: none; font-family: Verdana;">
+                        <h3>Bubble View</h3>
+                        <select id="bc" onchange="updateBubbleChart()">
+                          <option value="0">Worldwide</option>
+                          <option value="1">Domestic</option>
+                        </select>
+                    </fieldset>
                     <div class="bubble-container"> <!-- Container for the bubble chart -->
-                        <div id="myBubble"></div> <!-- Bubble chart goes here -->
+                        <div id="myBubble"></div> 
+                        <div id="myBubble_us" style="display: none;"></div> 
                     </div>
                 </span>
+                <script> 
+                    function updateBubbleChart() {
+                        var selectedValue = document.getElementById('bc').value;
+                        if (selectedValue === '0') {
+                            document.getElementById('myBubble').style.display = 'block';
+                            document.getElementById('myBubble_us').style.display = 'none';
+                        } else if (selectedValue === '1') {
+                            document.getElementById('myBubble').style.display = 'none';
+                            document.getElementById('myBubble_us').style.display = 'block';
+                        }
+                    }
+                </script>
             </div>
         </div>      
     </div>
-    <script src="test_bar.js"></script>
-    <script src="test_treemap.js"></script>
-    <script src="test_bubble.js"></script>
+    <script src="t_bar.js"></script>
+    <script src="t_treemap.js"></script>
+    <script src="t_treemap_us.js"></script>
+    <script src="t_bubble.js"></script>
+    <script src="t_bubble_us.js"></script>
 </body>
 </html>
