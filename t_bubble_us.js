@@ -21,11 +21,11 @@ fetch('2023_worldwide_box_office_data.csv')
           marker: {
             size: top20Data.map(entry => entry.Domestic*0.000000001),
             sizemode: 'diameter',
-            sizeref: 0.01, // Adjust this value to control the size of the bubbles
+            sizeref: 0.01, 
             color: top20Data.map(entry => entry.Rank),
-            colorscale: 'Blues',
-            cmin: 0, // Adjust this based on your data
-            cmax: 20, // Adjust this based on your data
+            colorscale: 'Picnic',
+            cmin: 0, 
+            cmax: 20, 
             colorbar: {
               title: 'Rank'
             }
@@ -33,12 +33,15 @@ fetch('2023_worldwide_box_office_data.csv')
           text: top20Data.map(entry => entry['Release Group']),
         };
 
+        // Set the layout
         const layout = {
           title: 'Top 20 US Box Office Movies',
           xaxis: { title: 'Rank' },
           yaxis: { title: 'Domestic Box Office' },
-          plot_bgcolor: 'white', // Set plot background color to white
-          paper_bgcolor: 'white' 
+          plot_bgcolor: 'white', 
+          paper_bgcolor: 'white', 
+          width: 1200,
+          height: 500
         };
 
         // Render the bubble chart

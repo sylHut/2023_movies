@@ -19,14 +19,14 @@ fetch('2023_worldwide_box_office_data.csv')
             // Create the path for the treemap
             const path = 'Worldwide Box Office';
 
-            // Define a custom pastel blue color scale
+            // Define a custom color scale
             const customPastelBlueScale = [
               [0, '#FFFFFF'],
-              [0.2, '#DFF2FF'],
-              [0.4, '#A3D5FF'],
-              [0.6, '#75BFEC'],
-              [0.8, '#6F9CDE'],
-              [1, '#6879D0']
+              [0.2, '#E1DEF5'],
+              [0.4, '#C3BDEB'],
+              [0.6, '#A59CE1'],
+              [0.8, '#877AD7'],
+              [1, '#6A5ACD']
             ];
 
             // Create the treemap trace
@@ -51,11 +51,12 @@ fetch('2023_worldwide_box_office_data.csv')
               }        
             };
 
-
             // Create the layout
             const layout = {
               margin: { t: 50, l: 25, r: 25, b: 25 },
-              title: '2023 Worldwide Box Office - Top 20'
+              title: '2023 Worldwide Box Office - Top 20',
+              width: 1200,
+              height: 500
             };
 
             // Render the treemap
