@@ -16,7 +16,6 @@ fetch('2023_worldwide_box_office_data.csv')
               y: worldwideData.slice(0, 20).map(entry => entry.Foreign),
               type: 'bar',
               name: 'Foreign',
-              hovertext: worldwideData.slice(0, 20).map(entry => entry['Release Group']),
               marker: { color: '#7CA1D9' }                                          
             };
 
@@ -25,7 +24,6 @@ fetch('2023_worldwide_box_office_data.csv')
               y: worldwideData.slice(0, 20).map(entry => entry.Domestic),
               type: 'bar',
               name: 'Domestic',
-              hovertext: worldwideData.slice(0, 20).map(entry => entry['Release Group']),
               marker: { color: '#D3E5F8' }   
             };
 
@@ -33,17 +31,22 @@ fetch('2023_worldwide_box_office_data.csv')
 
             // Set the layout
             const layout = {
-              xaxis: { title: 'Rank', dtick: 1 },
-              yaxis: { title: 'Billion USD' },
-              legend: { title: '' },
-              title: '2023 Worldwide Box Office',
-              hovermode: 'closest',
-              template: 'plotly_white',
-              barmode: 'stack', // Stacked bar chart
-              width: 2500,
-              height: 450
-            };
-
+            xaxis: {
+              tickvals: worldwideData.slice(0, 20).map(entry => entry.Rank),
+              ticktext: worldwideData.slice(0, 20).map(entry => `${entry.Rank}.${entry['Release Group']}`),
+              dtick: 1,
+              tickangle: 11,
+            },
+            yaxis: { title: 'Billion USD'},
+            legend: { title: ''},
+            title: '2023 Worldwide Box Office',
+            hovermode: 'closest',
+            template: 'plotly_white',
+            barmode: 'stack', // Stacked bar chart
+            width: 2500,
+            height: 450,
+          };
+          
             // Render the chart
             Plotly.newPlot('myBar', data, layout);
           }
