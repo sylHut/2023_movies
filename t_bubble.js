@@ -35,9 +35,9 @@ fetch('2023_worldwide_box_office_data.csv')
 
         // Set the layout
         const layout = {
-          title: 'Top 20 Worldwide Box Office Movies',
+          title: '2023 Worldwide Box Office',
           xaxis: { title: 'Rank' },
-          yaxis: { title: 'Worldwide Box Office' },
+          yaxis: { title: 'Million USD' },
           plot_bgcolor: 'white',      
           paper_bgcolor: 'white',
           width: 1200,

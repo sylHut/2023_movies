@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.85">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Charts</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chroma-js@2.1.0"></script>
 
+    <!-- Adding styles for the container for two charts -->
     <style>
         span.a {
           display: inline-block;
@@ -33,21 +34,31 @@
 </head>
 <body>
     <div class="container">
+        <!-- Title at the top of the page -->
         <div class="row">
             <div class="col-md-12 jumbotron text-center" style="font-family: Verdana;text-align: center; color: rgb(77, 88, 99)">
                 <h1>2023 Worldwide Box Office Dashboard</h1>
             </div>
         </div>
+        
+        <!-- bar chart -->
         <div class="row">
             <div class="col-md-12">
+                <p class="line-1" style="font-family: Verdana; color: rgb(82, 101, 121); font-weight: bold; font-size: larger;">Bar Chart:</p>
+                <p class="line-2"style="font-family: Verdana; color: rgb(82, 101, 121);">We love franchise movies!</p>
                 <div id="myBar"></div>
-            </div>
-        </div>
-        <div class="row">
+            <!-- </div>
+        </div> -->
+
+        <!-- Container for the two charts -->
+        <!-- <div class="row"> -->
             <div class="col-md-6">
-                <span class="a"> <!-- treemp box -->
-                    <fieldset style="border: none; font-family: Verdana;">
-                        <h3>Treemap View</h3>
+                <!-- treemap box -->
+                <span class="a"> 
+                    <fieldset style="border: none; font-family: Verdana; color: rgb(82, 101, 121)">
+                        <h3>Treemap View:</h3>
+                        <p class="line-1"style="font-family: Verdana; color: rgb(82, 101, 121);">
+                            'Barbie' was adored by US moviegoers while 'Oppenheimer' excelled overseas</p>
                         <select id="tm" onchange="updateTreemap()">
                           <option value="0">Worldwide</option>
                           <option value="1">Domestic</option>
@@ -70,9 +81,11 @@
                         }
                     }
                 </script>
-                <span class="a"> <!-- bubble box -->
-                    <fieldset style="border: none; font-family: Verdana;">
-                        <h3>Bubble View</h3>
+                <!-- bubble box -->
+                <span class="a"> 
+                    <fieldset style="border: none; font-family: Verdana; color: rgb(82, 101, 121)">
+                        <h3>Bubble View:</h3>
+                        <p class="line-2"style="font-family: Verdana; color: rgb(82, 101, 121);">Different markets, varied cinematic tastes</p>
                         <select id="bc" onchange="updateBubbleChart()">
                           <option value="0">Worldwide</option>
                           <option value="1">Domestic</option>
