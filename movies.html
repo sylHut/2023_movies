@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.85">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Charts</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -12,19 +12,39 @@
 
     <!-- Adding styles for the container for two charts -->
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            width: 100%;
+            height: 100%;
+        }
         span.a {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
           display: inline-block;
-          width: 1200px;
-          height: 500px;
-          padding: 5px;
           border: 1px rgba(255, 255, 0, 0);
           background-color: rgba(255, 255, 0, 0);
         }
-        .treemap-container,
-        .bubble-container {
+        .col-md-6 {           
+          flex-grow: 1;
+          display: flex;          
           width: 100%; 
-          height: 100%; 
         }
+        #myBar,
         #myTreemap,
         #myBubble {
           width: 100%;
@@ -44,19 +64,18 @@
         <!-- bar chart -->
         <div class="row">
             <div class="col-md-12">
-                <p class="line-1" style="font-family: Verdana; color: rgb(82, 101, 121); font-weight: bold; font-size: larger;">Bar Chart:</p>
-                <p class="line-2"style="font-family: Verdana; color: rgb(82, 101, 121);">We love franchise movies!</p>
+                <p class="line-1" style="font-family: Verdana; color: rgb(82, 101, 121); font-weight: bold; font-size: x-large;">
+                    Beloved movies in 2023:</p>
+                <p class="line-2"style="font-family: Verdana; color: rgb(82, 101, 121); font-size: x-large;">
+                    We love franchise movies, and Go to theaters for the blockbuster movies!</p>
                 <div id="myBar"></div>
-            <!-- </div>
-        </div> -->
 
         <!-- Container for the two charts -->
-        <!-- <div class="row"> -->
             <div class="col-md-6">
                 <!-- treemap box -->
                 <span class="a"> 
-                    <fieldset style="border: none; font-family: Verdana; color: rgb(82, 101, 121)">
-                        <h3>Treemap View:</h3>
+                    <fieldset style="border: none; font-family: Verdana; color: rgb(82, 101, 121); font-size: x-large;">
+                        <h3>The year of Barbenheimer:</h3>
                         <p class="line-1"style="font-family: Verdana; color: rgb(82, 101, 121);">
                             'Barbie' was adored by US moviegoers while 'Oppenheimer' excelled overseas</p>
                         <select id="tm" onchange="updateTreemap()">
@@ -83,8 +102,8 @@
                 </script>
                 <!-- bubble box -->
                 <span class="a"> 
-                    <fieldset style="border: none; font-family: Verdana; color: rgb(82, 101, 121)">
-                        <h3>Bubble View:</h3>
+                    <fieldset style="border: none; font-family: Verdana; color: rgb(82, 101, 121); font-size: x-large;">
+                        <h3>How we are different from the rest of the world:</h3>
                         <p class="line-2"style="font-family: Verdana; color: rgb(82, 101, 121);">Different markets, varied cinematic tastes</p>
                         <select id="bc" onchange="updateBubbleChart()">
                           <option value="0">Worldwide</option>

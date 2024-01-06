@@ -37,11 +37,11 @@ fetch('2023_worldwide_box_office_data.csv')
         const layout = {
           title: '2023 Worldwide Box Office',
           xaxis: { title: 'Rank' },
-          yaxis: { title: 'Million USD' },
+          yaxis: { title: 'Billion USD' },
           plot_bgcolor: 'white',      
           paper_bgcolor: 'white',
           width: 1200,
-          height: 500 
+          height: 450 
         };
 
         // Render the bubble chart
