@@ -17,7 +17,7 @@ fetch('2023_worldwide_box_office_data.csv')
               type: 'bar',
               name: 'Foreign',
               hovertext: worldwideData.slice(0, 20).map(entry => entry['Release Group']),
-              marker: { color: '#6A5ACD' }        
+              marker: { color: '#7CA1D9' }                                          
             };
 
             const trace2 = {
@@ -26,7 +26,7 @@ fetch('2023_worldwide_box_office_data.csv')
               type: 'bar',
               name: 'Domestic',
               hovertext: worldwideData.slice(0, 20).map(entry => entry['Release Group']),
-              marker: { color: '#D1D0EA' }
+              marker: { color: '#D3E5F8' }   
             };
 
             const data = [trace1, trace2];

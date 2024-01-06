@@ -20,13 +20,13 @@ fetch('2023_worldwide_box_office_data.csv')
             const path = 'Worldwide Box Office';
 
             // Define a custom color scale
-            const customPastelBlueScale = [
+            const customBlueScale = [
               [0, '#FFFFFF'],
-              [0.2, '#E1DEF5'],
-              [0.4, '#C3BDEB'],
-              [0.6, '#A59CE1'],
-              [0.8, '#877AD7'],
-              [1, '#6A5ACD']
+              [0.2, '#DFF2FF'],
+              [0.4, '#A3D5FF'],
+              [0.6, '#75BFEC'],
+              [0.8, '#6F9CDE'],
+              [1, '#F8C8DC']
             ];
 
             // Create the treemap trace
@@ -38,7 +38,7 @@ fetch('2023_worldwide_box_office_data.csv')
               values: top20Data.map(entry => entry['Worldwide']),
               hovertemplate: '<b>%{label}</b><br>Worldwide: %{value}',
               marker: {
-                colorscale: customPastelBlueScale,
+                colorscale: customBlueScale,
                 cmin: Math.min(...top20Data.map(entry => entry['Worldwide'])),
                 cmax: Math.max(...top20Data.map(entry => entry['Worldwide'])),                
                 line: { color: 'white', width: 3 }, 
