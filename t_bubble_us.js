@@ -21,7 +21,7 @@ fetch('2023_worldwide_box_office_data.csv')
           marker: {
             size: top20Data.map(entry => entry.Domestic*0.000000001),
             sizemode: 'diameter',
-            sizeref: 0.01, 
+            sizeref: 0.02, 
             color: top20Data.map(entry => entry.Rank),
             colorscale: 'Picnic',
             cmin: 0, 
@@ -40,8 +40,8 @@ fetch('2023_worldwide_box_office_data.csv')
           yaxis: { title: 'Million USD' },
           plot_bgcolor: 'white', 
           paper_bgcolor: 'white', 
-          width: 1200,
-          height: 450
+          width: 600,
+          height: 370,
         };
 
         // Render the bubble chart

@@ -55,8 +55,8 @@ fetch('2023_worldwide_box_office_data.csv')
             const layout = {
               margin: { t: 50, l: 25, r: 25, b: 25 },
               title: '2023 Worldwide Box Office - Top 20',
-              width: 1200,
-              height: 450
+              width: 600,
+              height: 370,
             };
 
             // Render the treemap

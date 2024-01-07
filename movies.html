@@ -20,16 +20,19 @@
         }
         body {
             display: flex;
-            align-items: center;
+            align-items: top;
             justify-content: center;
             padding: 5px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
         }
         .content {
             display: flex;
             flex-direction: column;
             max-width: 1200px;
-            width: 100%;
-            height: 100%;
         }
         span.a {
           flex-grow: 1;
@@ -38,17 +41,17 @@
           display: inline-block;
           border: 1px rgba(255, 255, 0, 0);
           background-color: rgba(255, 255, 0, 0);
+          max-width: 1200px;
         }
-        .col-md-6 {           
+        .col-md-6 {                 
           flex-grow: 1;
           display: flex;          
-          width: 100%; 
+          max-width:1200 px;
         }
-        #myBar,
         #myTreemap,
         #myBubble {
-          width: 100%;
-          height: 100%;
+          width: 1200 px;
+          height: 450 px;
         }
     </style>
 </head>
@@ -56,7 +59,7 @@
     <div class="container">
         <!-- Title at the top of the page -->
         <div class="row">
-            <div class="col-md-12 jumbotron text-center" style="font-family: Verdana;text-align: center; color: rgb(77, 88, 99)">
+            <div class="col-md-12 jumbotron text-center" style="font-family: Verdana;text-align: center; color: #6A5ACD">
                 <h1>2023 Worldwide Box Office Dashboard</h1>
             </div>
         </div>
@@ -64,7 +67,9 @@
         <!-- bar chart -->
         <div class="row">
             <div class="col-md-12">
-                <p class="line-1"style="font-family: Verdana; text-align: center; color: rgb(82, 101, 121); font-size: x-large;">
+                <p class="line-1"style="border: none; font-family: Verdana; text-align: center; color: #6A5ACD; font-size: large; font-weight: bold;">
+                    Movies loved globally:</p>
+                <p class="line-2"style="font-family: Verdana; text-align: center; color: rgb(82, 101, 121); font-size: large;">
                     Franchise and blockbuster movies attracted moviegoers around the world</p>
                 <div id="myBar"></div>
 
@@ -72,10 +77,10 @@
             <div class="col-md-6">
                 <!-- treemap box -->
                 <span class="a"> 
-                    <fieldset style="border: none; font-family: Verdana; color: rgb(82, 101, 121); font-size: x-large;">
+                    <fieldset style="border: none; font-family: Verdana; color: #6A5ACD; font-size: large;">
                         <h3>The year of Barbenheimer</h3>
                         <p class="line-1"style="font-family: Verdana; color: rgb(82, 101, 121);">
-                            'Barbie' was adored by US moviegoers while 'Oppenheimer' excelled overseas</p>
+                            'Barbie' was adored by US moviegoers</p>
                         <select id="tm" onchange="updateTreemap()">
                           <option value="0">Worldwide</option>
                           <option value="1">Domestic</option>
@@ -100,9 +105,9 @@
                 </script>
                 <!-- bubble box -->
                 <span class="a"> 
-                    <fieldset style="border: none; font-family: Verdana; color: rgb(82, 101, 121); font-size: x-large;">
-                        <h3>How we are different from the rest of the world</h3>
-                        <p class="line-2"style="font-family: Verdana; color: rgb(82, 101, 121);">Different markets, varied cinematic tastes</p>
+                    <fieldset style="border: none; font-family: Verdana; color: #6A5ACD; font-size: large;">
+                        <h3>How US market is different</h3>
+                        <p class="line-1"style="font-family: Verdana; color: rgb(82, 101, 121);">Different markets, varied cinematic tastes</p>
                         <select id="bc" onchange="updateBubbleChart()">
                           <option value="0">Worldwide</option>
                           <option value="1">Domestic</option>

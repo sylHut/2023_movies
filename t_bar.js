@@ -16,7 +16,7 @@ fetch('2023_worldwide_box_office_data.csv')
               y: worldwideData.slice(0, 20).map(entry => entry.Foreign),
               type: 'bar',
               name: 'Foreign',
-              marker: { color: '#7CA1D9' }                                          
+              marker: { color: '#a59ce1' }                           
             };
 
             const trace2 = {
@@ -24,27 +24,29 @@ fetch('2023_worldwide_box_office_data.csv')
               y: worldwideData.slice(0, 20).map(entry => entry.Domestic),
               type: 'bar',
               name: 'Domestic',
-              marker: { color: '#D3E5F8' }   
+              marker: { color: '#D1D0EA' }   
             };
 
             const data = [trace1, trace2];
 
             // Set the layout
             const layout = {
-            xaxis: {
+            xaxis: { 
+              dtick: 1,
+              tickmode: 'array',
               tickvals: worldwideData.slice(0, 20).map(entry => entry.Rank),
               ticktext: worldwideData.slice(0, 20).map(entry => `${entry.Rank}.${entry['Release Group']}`),
-              dtick: 1,
-              tickangle: 11,
-            },
+              tickfont: {size:8},
+              tickangle: 15, 
+            },              
             yaxis: { title: 'Billion USD'},
             legend: { title: ''},
             title: '2023 Worldwide Box Office',
             hovermode: 'closest',
             template: 'plotly_white',
             barmode: 'stack', // Stacked bar chart
-            width: 2500,
-            height: 450,
+            width: 1200,
+            height: 400,
           };
           
             // Render the chart
